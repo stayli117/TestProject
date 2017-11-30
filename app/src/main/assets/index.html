@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>HTML5 接口测试</title>
+    <script type="text/javascript" src="People.js"></script>
+    <script type="text/javascript">
+
+      window.onload=function(){
+        PeopleAgent.onPageBegin("首页面")
+       }
+
+    function onPageEnd(obj){
+        PeopleAgent.onPageEnd(obj)
+     }
+
+   function deviceId() {
+        window.my.showKeyboard()
+		document.getElementById("Android").innerHTML = obj;
+	}
+    // 预置插件加密
+	  function presetOnEvent(obj) {
+
+		document.getElementById("Preset").innerHTML = obj;
+	  }
+	  // 个性化插件加密
+	  function singleOnEvent(obj) {
+		document.getElementById("Single").innerHTML = obj;
+	  }
+
+
+
+
+    </script>
+    <style type="text/css">
+   input {
+       width: 100%;
+       height: 60px;
+   }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<br/>
+
+<input type="button" value="getDeviceId"
+       onclick="deviceId()"/>
+<br/>
+<br/>
+<input type="button" style='font-size:30px' value="预置短信加密" onclick="PeopleAgent.presetOnEvent(presetOnEvent)"/>
+<br/>
+<br/>
+<input type="button" style='font-size:30px' value="个性化短信加密" onclick="PeopleAgent.singleOnEvent(singleOnEvent)"/>
+<br/>
+<p id="Android"></p>
+<br/>
+<p id="Preset"></p>
+<br/>
+<p id="Single"></p>
+<br/>
+
+
+</body>
+
+
+</html>
