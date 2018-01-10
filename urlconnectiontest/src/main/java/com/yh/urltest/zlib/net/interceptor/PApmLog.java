@@ -2,7 +2,6 @@ package com.yh.urltest.zlib.net.interceptor;
 
 import android.util.Log;
 
-import net.people.apmv2.agent.global.ApmConfig;
 
 /**
  * Created by stayli on 2016/11/2.
@@ -57,10 +56,7 @@ public final class PApmLog {
      */
     public static void trace(String msg) {
         if (debug) {
-            if (msg.contains(ApmConfig.ApmE))
-                trace(Log.ERROR, TAG, msg);
-            else
-                trace(Log.INFO, TAG, msg);
+            trace(Log.INFO, TAG, msg);
         }
 
     }
@@ -70,10 +66,8 @@ public final class PApmLog {
      */
     public static void traceTh(String msg) {
         if (debug) {
-            if (msg.contains(ApmConfig.ApmE))
-                trace(Log.ERROR, Thread.currentThread().getName() + " " + TAG, msg);
-            else
-                trace(Log.INFO, Thread.currentThread().getName() + " " + TAG, msg);
+
+            trace(Log.INFO, Thread.currentThread().getName() + " " + TAG, msg);
         }
 
     }

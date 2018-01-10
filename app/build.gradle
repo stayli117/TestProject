@@ -15,6 +15,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            multiDexEnabled true //防止方法数量超过65536导致错误
+        }
+        debug {
+            minifyEnabled false // 代码混淆
+            multiDexEnabled false // 65535
         }
     }
 
@@ -22,11 +27,11 @@ android {
         abortOnError false
     }
 
-
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
+
     }
 }
 
@@ -37,7 +42,10 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-    compile project(':sotpsdk')
 
     compile 'com.yanzhenjie:permission:1.1.0'
+
+    // okhttp3
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.squareup.okio:okio:1.13.0'
 }

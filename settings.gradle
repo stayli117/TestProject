@@ -1,1 +1,1 @@
-include ':app', ':sotpsdk', ':mylibrary', ':wifiproxytest', ':urlconnectiontest'
+include ':app', ':sotpsdk', ':mylibrary', ':wifiproxytest', ':urlconnectiontest', /*':lifedatademo', */':rxdemo'
